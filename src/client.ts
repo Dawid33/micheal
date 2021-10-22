@@ -51,4 +51,4 @@ client.on("message", async (message : Message) => {
 	}
 });
 
-client.login(process.env.BOT_TOKEN ?? ""); // provide your bot token
+client.login(process.env.BOT_TOKEN); // provide your bot token
