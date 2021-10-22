@@ -7,6 +7,7 @@ import { Client } from "discordx";
 //Sauce or loss 830840892301770752
 
 var cntToReply : number = 0;
+const stopCnt : number = 10;
 
 const client = new Client({
 	simpleCommand: {
@@ -44,8 +45,8 @@ client.on("interactionCreate", (interaction: Interaction) => {
 client.on("message", async (message : Message) => {
 	if (message.author.id != "900833590919704628") {
 		cntToReply += 1;
-		if (cntToReply >= 5) {
-			cntToReply = 0;
+		if (cntToReply >= stopCnt) {
+			cntToReply = Math.random() * (stopCnt / 2);
 			message.reply("?");
 		}
 	}

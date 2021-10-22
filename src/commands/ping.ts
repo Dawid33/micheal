@@ -11,4 +11,15 @@ export abstract class Ping {
     ) {
         interaction.reply("I have been pinged!");
     }
+
+    @Guild("900832030173044747")
+    @Slash("stack")
+    search_stack(
+        @SlashOption("search-term", {description : "Search term for stack overflow"})
+        searchTerm : string,
+        interaction: CommandInteraction
+    ) {
+        let term = searchTerm.replaceAll(" ", "+");
+        interaction.reply("https://stackoverflow.com/search?q=" + term);
+    }
 }
