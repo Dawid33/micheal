@@ -1,6 +1,6 @@
 build
 node_modules
 yarn.lock
-setup.sh
+run.sh
 package-lock.json
 .vscode
