@@ -51,4 +51,9 @@ client.on("message", async (message : Message) => {
 	}
 });
 
-client.login(process.env.BOT_TOKEN); // provide your bot token
+if (process.env.BOT_TOKEN != undefined) {
+	var token = process.env.BOT_TOKEN;
+	client.login(token); // provide your bot token
+} else {
+	console.log("TOKEN NOT SET")
+}
